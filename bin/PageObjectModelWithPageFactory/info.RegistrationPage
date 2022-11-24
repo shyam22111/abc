@@ -1,0 +1,38 @@
+public class RegistrationPage {
+	
+	// Declaration ==> webelements
+	
+	@FindBy(xpath="value") private WebElement reg_fblogo;
+	@FindBy(xpath="value") private WebElement already_acc;
+	@FindBy(xpath="value") private WebElement signuplink;
+	@FindBy(xpath="value") private WebElement firstname;
+	@FindBy(xpath="value") private WebElement surname;
+	@FindBy(xpath="value") private WebElement mob_email;
+	@FindBy(xpath="value") private WebElement password;
+	@FindBy(xpath="value") private WebElement birhtdate;
+	@FindBy(xpath="value") private WebElement birthmonth;
+	@FindBy(xpath="value") private WebElement birthyear;
+	@FindBy(xpath="value") private WebElement gender;
+	@FindBy(xpath="value") private WebElement submitbtn;
+	
+	// Initalization.
+	
+	public RegistrationPage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+	
+	// Usage
+	
+	public void ClickFacebookSignupLink() {
+		signuplink.click();
+	}
+	
+	public void VerifyFacebookRegistrationPageFblogo() {
+		Assert.assertTrue(reg_fblogo.isDisplayed(), "The facebook logo on registration page is not displayed");
+	}
+	
+	public void VerifyFacebookRegistrationPageAlreadyAccount() {
+		Assert.assertTrue(already_acc.isDisplayed(), "The already having an account option on registration page is not displayed");
+		Assert.assertEquals(already_acc.getText(), "Already have an account?");
+	}
+}

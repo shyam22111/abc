@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- For Creating Suite Trick (GRI- Group,run,include,exclude at suite level) -->
+
+
+<suite name="Regression">
+<groups>
+<run>
+<include name="regression"></include>
+</run>
+</groups>
+  <test  name="Test">
+    <classes>
+      <class name="DummyProject.Test1"/>
+      <class name="DummyProject.Test2"/>
+      <class name="DummyProject.Test3"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Regression -->
